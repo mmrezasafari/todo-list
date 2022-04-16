@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import style from "./assets/style/style.scss"
+import AddBar from "./components/AddBar";
+import Header from "./components/Header";
+import TodoList from "./components/TodoList";
+import bgLightImage from "./assets/images/bg-desktop-light.jpg"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img className="bg-image" src={bgLightImage} />
+      <div className="todo-container">
+      <Header />
+      <AddBar />
+      <TodoList />
+      </div>
     </div>
   );
 }
