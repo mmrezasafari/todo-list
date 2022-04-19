@@ -1,29 +1,57 @@
-import $ from "jquery"
+import { React } from "react";
 
-function TodoList() {
+function TodoList({ todoList, toggleDone, allTodo, activeTodo, completeTodo, clearComplete }) {
   return (
     <section className="todo-list-section">
       <nav>
         <div className="todo-list">
           <ul>
-            <li className="todo-item" aria-checked="false">
-              <span className="circle-check"></span>
-              <div className="todo-text">hello world</div>
-            </li>
-            <hr />
+            {todoList.map((todo) => {
+              return (
+                <>
+                  <li
+                    className="todo-item"
+                    onClick={toggleDone}
+                    id={todo.id}
+                  >
+                    <span
+                      className={`circle-check ${
+                        todo.complete ? "bg-complete-color" : ""
+                      }`}
+                      id={todo.id}
+                    ></span>
+                    <div
+                      className={`todo-text ${
+                        todo.complete ? "text-decoration" : ""
+                      }`}
+                      id={todo.id}
+                    >
+                      {todo.task}
+                    </div>
+                  </li>
+                  <hr />
+                </>
+              );
+            })}
           </ul>
         </div>
       </nav>
       <footer>
-        <span className="left-item">5 item left</span>
+        <span className="left-item">{todoList.length} item left</span>
         <nav>
           <ul>
-            <li><a href="#">All</a></li>
-            <li><a href="#">Active</a></li>
-            <li><a href="#">Completed</a></li>
+            <li>
+              <a href="#" onClick={allTodo}>All</a>
+            </li>
+            <li>
+              <a href="#" onClick={activeTodo}>Active</a>
+            </li>
+            <li>
+              <a href="#" onClick={completeTodo}>Completed</a>
+            </li>
           </ul>
         </nav>
-        <span>Clear Complete</span>
+        <span onClick={clearComplete}>Clear Complete</span>
       </footer>
     </section>
   );
