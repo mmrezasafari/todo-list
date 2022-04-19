@@ -11,9 +11,17 @@ hr {
   border: solid 0.2px hsl(236, 9%, 61%);
 }
 
-a{
-    color: hsl(236, 9%, 61%) ;
-    text-decoration: none;
+a {
+  color: hsl(236, 9%, 61%);
+  text-decoration: none;
+}
+
+.text-decoration {
+  text-decoration: line-through;
+}
+
+.bg-complete-color {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 .App {
@@ -46,11 +54,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    img {
-      width: 25px;
-      height: 25px;
-      align-self: center;
-    }
     h1 {
       font-size: 30px;
       font-weight: 700;
@@ -80,6 +83,13 @@ header {
     border: none;
     outline: none;
   }
+  .add-button:hover {
+    transition: all .5s ;
+    background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    color: white;
+    font-weight: 700;
+    
+  }
 }
 
 .todo-list-section {
@@ -87,6 +97,7 @@ header {
   background: rgb(255, 255, 255);
   box-shadow: 0px 10px 27px 0px rgba(0, 0, 0, 0.53);
   border-radius: 5px;
+  margin-bottom: 50px;
   nav {
     div {
       padding-top: 5px;
@@ -143,8 +154,8 @@ header {
     span:hover {
       color: blue;
     }
-    a:hover{
-        color: blue;
+    a:hover {
+      color: blue;
     }
   }
 }
